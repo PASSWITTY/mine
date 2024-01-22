@@ -1,0 +1,62 @@
+<!-- views/skills.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Skills</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .skill-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 15px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .skill-item:hover {
+      transform: scale(1.05);
+    }
+
+    .edit-btn, .delete-btn {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .edit-btn:hover, .delete-btn:hover {
+      background-color: #2980b9;
+    }
+    .mytitle{
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mytitle" >List of Skills</h1>
+  
+  <% skills.forEach(skill => { %>
+    <div class="skill-item">
+      <h3><%= skill.name %></h3>
+      <p><%= skill.description %></p>
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </div>
+  <% }); %>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- views/projects.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .project-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 15px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-item:hover {
+      transform: scale(1.05);
+    }
+
+    .edit-btn, .delete-btn {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .edit-btn:hover, .delete-btn:hover {
+      background-color: #c0392b;
+    }
+    .mytitle{
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mytitle">List of Projects</h1>
+  
+  <% projects.forEach(project => { %>
+    <div class="project-item">
+      <h3><%= project.name %></h3>
+      <p>Tech Stack: <%= project.techStack %></p>
+      <p><%= project.description %></p>
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </div>
+  <% }); %>
+
+</body>
+</html>
